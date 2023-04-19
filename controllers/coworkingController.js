@@ -39,6 +39,7 @@ exports.findAllCoworkings = (req, res) => {
                 {superficy: {[Op.gte]: limit}}
             ]
         },
+        order: [['name','asc']]
         })
         .then((el) => {
             const msg = `La liste des coworkings a bien été retournée.`
