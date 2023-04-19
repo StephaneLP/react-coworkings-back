@@ -31,6 +31,7 @@ exports.createCoworking = (req, res) => {
 exports.findAllCoworkings = (req, res) => {
     const search = req.query.search || ""
     const limit = req.query.limit || 0
+    const sort = req.query.sort || "asc"
 
     CoworkingModel.findAll({
         where: {
@@ -39,7 +40,7 @@ exports.findAllCoworkings = (req, res) => {
                 {superficy: {[Op.gte]: limit}}
             ]
         },
-        order: [['name','asc']]
+        order: [['name',sort]]
         })
         .then((el) => {
             const msg = `La liste des coworkings a bien été retournée.`
