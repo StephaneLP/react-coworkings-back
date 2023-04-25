@@ -19,6 +19,6 @@ router
     // .put(authController.protect, coworkingController.updateCoworking)
     .put(coworkingController.updateCoworking)
     // .delete(authController.protect, authController.restrictTo('admin'), coworkingController.deleteCoworking)
-    .delete(coworkingController.deleteCoworking)
+    .delete(authController.protect, coworkingController.deleteCoworking)
 
 module.exports = router;

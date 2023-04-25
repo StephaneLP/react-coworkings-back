@@ -33,7 +33,7 @@ exports.login = (req, res) => {
                 const token = jwt.sign({
                     data: el.id,
                     username: el.username,
-                }, privateKey, { expiresIn: "1h"})
+                }, privateKey, { expiresIn: "30000"})
 
                 const msg = "L'utilisateur a été connecté avec succès"
                 el.password = "hidden"
