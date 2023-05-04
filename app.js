@@ -21,5 +21,5 @@ app
     .listen(port, () => {
         console.log(`L'app sur le port ${port}`)
     })  
-
+w
 sequelize.initDb()
