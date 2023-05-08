@@ -32,8 +32,6 @@ exports.createUser = (req, res) => {
 exports.findAllUsers = (req, res) => {
     const search = req.query.search || ""
 
-console.log("hello")
-
     UserModel.findAll({
         where: {username: {[Op.like]: `%${search}%`}},
         })

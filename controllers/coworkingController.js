@@ -1,4 +1,3 @@
-const coworkings = require('../db/mock-coworkings');
 const {CoworkingModel, ReviewModel} = require('../db/sequelize');
 const { Op, UniqueConstraintError, ValidationError } = require("sequelize");
 

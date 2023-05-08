@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt")
 const {Sequelize, DataTypes} = require('sequelize')
-const mockCoworkings = require('../db/mock-coworkings')
+const mockCoworkings = require('./mock-coworkings')
 
 const sequelize = new Sequelize('lapiscine_coworking', 'root', '', {
     host: 'localhost',
