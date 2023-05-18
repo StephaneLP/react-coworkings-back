@@ -12,15 +12,19 @@ const CoworkingModel = require('../models/coworkingModel')(sequelize, DataTypes)
 const UserModel = require('../models/usersModel')(sequelize, DataTypes)
 const ReviewModel = require('../models/reviewModel')(sequelize, DataTypes)
 
-UserModel.hasMany(ReviewModel, {
-  foreignKey: {allowNull: false}
-})
-ReviewModel.belongsTo(UserModel);
-
-CoworkingModel.hasMany(ReviewModel, {
+// UserModel.hasMany(ReviewModel, {
+//   foreignKey: {allowNull: false}
+// })
+ReviewModel.belongsTo(UserModel, {
     foreignKey: {allowNull: false}
-})
-ReviewModel.belongsTo(CoworkingModel);
+});
+
+// CoworkingModel.hasMany(ReviewModel, {
+//     foreignKey: {allowNull: false}
+// })
+ReviewModel.belongsTo(CoworkingModel, {
+        foreignKey: {allowNull: false}
+    });
 
 const initDb = () => {
     sequelize.sync({ force: true })
