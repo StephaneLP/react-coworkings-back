@@ -4,6 +4,12 @@ const { Op, UniqueConstraintError, ValidationError } = require("sequelize")
 const jwt = require("jsonwebtoken")
 const privateKey = require("../auth/privateKey")
 
+
+
+
+
+
+
 exports.login = (req, res) => {
     const user = req.body.username
     const pwd = req.body.password
@@ -46,6 +52,17 @@ exports.login = (req, res) => {
     })
 }
 
+
+
+
+
+
+
+
+
+
+
+
 exports.protect = (req, res, next) => {
     const authorizationHreader = req.headers.authorization
 
@@ -83,6 +100,10 @@ exports.restrictTo = (...roles) => {
             })
     }
 }
+
+
+
+
 
 exports.signup = (req, res) => {
     const newUser = req.body;
